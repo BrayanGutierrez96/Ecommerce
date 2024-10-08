@@ -7,6 +7,9 @@ function Carrito() {
     <Link className="text-gray-400">Home</Link>
     <span>/</span>
     <Link>Cart</Link>
+    <div className="grid">
+      <h2>Example</h2>
+    </div>
   </div>
   );
 }
