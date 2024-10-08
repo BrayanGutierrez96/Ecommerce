@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 function Clock() {
-  const targetDate  = new Date("2024-10-07T18:00:00").getTime()
+  const targetDate  = new Date("2024-10-13T23:59:59").getTime()
   const [timeRemaining, setTimeRemaining] = useState(targetDate  - Date.now());
 
   useEffect(() => {
