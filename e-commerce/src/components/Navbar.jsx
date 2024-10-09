@@ -1,29 +1,41 @@
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 function Navbar() {
   const navigate = useNavigate();
+  const [contract, setContract] = useState(true) 
 
   const navigation = () => {
     navigate("/");
   };
+
+  const menu = ()=>{
+    const list = document.querySelector("#list")
+    if(contract === true){
+     <span className="material-symbols-outlined">menu</span>
+     list.style.display = "none"
+    }
+    
+  }
   return (
     <nav className="grid border-b-2 pb-4 ">
-      <div className="bg-black grid grid-cols-3 py-2 px-32">
-        <div className="col-span-2 flex justify-end">
-          <div className="grid text-white col-span-2 justify-end text-base">
+      <div className="bg-black grid grid-cols-1 px-2 pt-4 pb-1 sm:px-32 sm:py-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid col-span-1 items-center justify-center sm:flex lg:justify-end sm:col-span-1 lg:col-span-2">
+          <div className="grid text-white text-xs col-span-1 sm:col-span-2 lg:justify-end lg:text-base">
             Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
           </div>
-          <div className="text-white pl-3 ">
+          <div className="flex justify-center text-xs lg:text-sm text-white pl-3 sm:justify-end  ">
             <Link className="font-bold border-b w-auto">ShopNow</Link>
           </div>
         </div>
-        <div className="flex items-center justify-end text-white">
+        <div className="flex text-white text-xs items-center justify-end lg:text-base">
           English
-          <span className="pt-1 material-symbols-outlined">
+          <span className="sm:pt-1 material-symbols-outlined">
             keyboard_arrow_down
           </span>
         </div>
       </div>
+      
       <div className="grid grid-cols-5 mt-4 mx-32">
         <button
           className="flex w-32 items-center justify-center  p-1"
@@ -31,7 +43,7 @@ function Navbar() {
         >
           <h1 className="grid font-bold text-2xl items-center">Exclusive</h1>
         </button>
-        <ul className="grid grid-cols-5  col-span-3 items-center pt-2">
+        <ul id="list" className="grid grid-cols-5  col-span-3 items-center pt-2">
           <li className="col-span-1 font-medium">
             <Link className="hover:border-b-2 hover:border-slate-400 ">
               Home
