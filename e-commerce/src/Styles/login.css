@@ -1,0 +1,53 @@
+#home{
+    display: flex;
+    flex-direction:row;   
+    width: 100%;
+}
+#portada{
+    width: 55%;
+}
+
+#contenedor-formulario{   
+    width: 45%;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    /* border:2px solid red; */
+    /*  */
+    row-gap: 20px;
+}
+#formulario{
+    display: flex;
+    flex-direction: column;  
+    row-gap: 20px;
+    /* border:2px solid red; */
+    width: 60%;
+    
+}  
+
+.crear-cuenta{
+    background-color: red;
+    color: white;
+}
+
+.entrada-login{
+    border-bottom: 2px solid rgb(170, 151, 151);
+}
+
+.google-cuenta{
+    display: flex;
+    align-items: center;
+
+    border: 2px solid rgb(170, 151, 151);
+}
+
+#img-google{
+    
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+}
+
+.btn-login{
+    padding: 10px;
+}
