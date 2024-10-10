@@ -5,11 +5,11 @@ function Catalog() {
   const products = data;
   return (
     <section className="flex flex-col gap-8">
-      <div className="flex mt-32 mx-14 items-center gap-4">
+      <div className="flex mt-32  items-center gap-4">
         <div className="bg-red-500 w-8 h-16 rounded "></div>
-        <div className="text-red-500 font-semibold text-lg">Today's</div>
+        <div className="text-red-500 font-semibold text-lg">Today`s</div>
       </div>
-      <div className="flex mx-14 w-content items-center">
+      <div className="flex  w-content items-center">
         <div className="w-1/5">
           <h5 className="font-semibold text-4xl tracking-wider">Flash Sales</h5>
         </div>

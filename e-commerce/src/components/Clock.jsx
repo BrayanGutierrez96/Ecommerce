@@ -1,24 +1,37 @@
 import { useEffect, useState } from "react";
 
 function Clock() {
-  const targetDate  = new Date("2024-10-07T18:00:00").getTime()
-  const [timeRemaining, setTimeRemaining] = useState(targetDate  - Date.now());
+  const targetDate = new Date("2024-12-31T23:59:00").getTime();
+  const [timeRemaining, setTimeRemaining] = useState(targetDate - Date.now());
+  const [active, setActive] = useState(true);
 
   useEffect(() => {
+    if (!active || timeRemaining <= 0) {
+      setTimeRemaining(0); 
+      return;
+    }
+
     const interval = setInterval(() => {
-      setTimeRemaining(targetDate  - Date.now());
+      const newTimeRemaining = targetDate - Date.now();
+      if (newTimeRemaining <= 0) {
+        setActive(false);
+        setTimeRemaining(0); 
+      } else {
+        setTimeRemaining(newTimeRemaining);
+      }
     }, 1000);
+
     return () => {
       clearInterval(interval);
     };
-  }, [targetDate ]);
-
+  }, [targetDate, active, timeRemaining]);
   const formatTime = (milisegundos) => {
-    const totalSeconds = Math.floor(milisegundos / 1000);
-    const segundos = totalSeconds % 60;
-    const minutos = Math.floor((totalSeconds % (60 * 60)) / 60);
-    const horas = Math.floor((totalSeconds % (60 * 60 * 24)) / (60 * 60));
-    const dias = Math.floor(totalSeconds / (60 * 60 * 24));
+    let totalSeconds = Math.floor(milisegundos / 1000);
+    let segundos = totalSeconds % 60;
+    let minutos = Math.floor((totalSeconds % (60 * 60)) / 60);
+    let horas = Math.floor((totalSeconds % (60 * 60 * 24)) / (60 * 60));
+    let dias = Math.floor(totalSeconds / (60 * 60 * 24));
+
     return { dias, horas, minutos, segundos };
   };
 
