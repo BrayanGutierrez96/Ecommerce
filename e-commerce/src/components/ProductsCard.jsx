@@ -1,4 +1,7 @@
+
+
 function ProductsCard({ img, title, price, oldPrice, rate, off}) {
+  
   return (
     <div className="flex flex-col shadow pb-8 gap-6 ">
       <div className="relative">

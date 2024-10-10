@@ -65,7 +65,7 @@ function Navbar() {
             </Link>
           </li>
           <li className="col-span-1 font-medium">
-            <Link className="hover:border-b-2 hover:border-slate-400">
+            <Link className="hover:border-b-2 hover:border-slate-400" to="login">
               Sing Up
             </Link>
           </li>

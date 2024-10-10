@@ -26,11 +26,11 @@ function Clock() {
     };
   }, [targetDate, active, timeRemaining]);
   const formatTime = (milisegundos) => {
-    let totalSeconds = Math.floor(milisegundos / 1000);
-    let segundos = totalSeconds % 60;
-    let minutos = Math.floor((totalSeconds % (60 * 60)) / 60);
-    let horas = Math.floor((totalSeconds % (60 * 60 * 24)) / (60 * 60));
-    let dias = Math.floor(totalSeconds / (60 * 60 * 24));
+    const totalSeconds = Math.floor(milisegundos / 1000);
+    const segundos = totalSeconds % 60;
+    const minutos = Math.floor((totalSeconds % (60 * 60)) / 60);
+    const horas = Math.floor((totalSeconds % (60 * 60 * 24)) / (60 * 60));
+    const dias = Math.floor(totalSeconds / (60 * 60 * 24));
 
     return { dias, horas, minutos, segundos };
   };
