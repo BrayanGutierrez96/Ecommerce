@@ -8,9 +8,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import MainPage from "./pages/MainPage"
 import Carrito from "./pages/Carrito"
 
-/* jose condori */
-import LogIn from './components/LogIn';
-
 
 function App() {
   return (
@@ -25,7 +22,7 @@ function App() {
     <Routes>
       <Route path="/" element={<MainPage/>}/>
       <Route path="/carrito" element={<Carrito/>}/>
-      <Route path="/login" element={<LogIn/>}/>
+      
     </Routes>
     </BrowserRouter>
   );

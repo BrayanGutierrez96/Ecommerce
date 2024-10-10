@@ -3,20 +3,19 @@ import { Link, useNavigate } from "react-router-dom";
 
 function Navbar() {
   const navigate = useNavigate();
-  const [contract, setContract] = useState(true) 
+  const [contract, setContract] = useState(true);
 
   const navigation = () => {
     navigate("/");
   };
 
-  const menu = ()=>{
-    const list = document.querySelector("#list")
-    if(contract === true){
-     <span className="material-symbols-outlined">menu</span>
-     list.style.display = "none"
+  const menu = () => {
+    const list = document.querySelector("#list");
+    if (contract === true) {
+      <span className="material-symbols-outlined">menu</span>;
+      list.style.display = "none";
     }
-    
-  }
+  };
   return (
     <nav className="grid border-b-2 pb-4 ">
       <div className="bg-black grid grid-cols-1 px-2 pt-4 pb-1 sm:px-32 sm:py-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -35,7 +34,7 @@ function Navbar() {
           </span>
         </div>
       </div>
-      
+
       <div className="grid grid-cols-5 mt-4 mx-32">
         <button
           className="flex w-32 items-center justify-center  p-1"
@@ -43,7 +42,10 @@ function Navbar() {
         >
           <h1 className="grid font-bold text-2xl items-center">Exclusive</h1>
         </button>
-        <ul id="list" className="grid grid-cols-5  col-span-3 items-center pt-2">
+        <ul
+          id="list"
+          className="grid grid-cols-5  col-span-3 items-center pt-2"
+        >
           <li className="col-span-1 font-medium">
             <Link className="hover:border-b-2 hover:border-slate-400 ">
               Home
@@ -55,7 +57,10 @@ function Navbar() {
             </Link>
           </li>
           <li className="col-span-1 font-medium">
-            <Link className="hover:border-b-2 hover:border-slate-400 ">
+            <Link
+              to={"/about"}
+              className="hover:border-b-2 hover:border-slate-400 "
+            >
               About
             </Link>
           </li>
