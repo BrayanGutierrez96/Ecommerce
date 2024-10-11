@@ -1,6 +1,6 @@
 import ProductsCard from "./ProductsCard";
 import { data } from "../data";
-import Clock from "./clock";
+import Clock from "./Clock";
 function Catalog() {
   const products = data;
   return (
