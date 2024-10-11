@@ -1,7 +1,30 @@
 import ProductItem from "./ProductItem";
 import { data } from "../data";
+import { useState, useEffect } from "react";
 
-function TotalProducts() {
+function TotalProducts({ functionTotal }) {
+  const [total, setTotal] = useState(0);
+  const [subtotals, setSubtotals] = useState({});
+
+  const handleTotalUpdate = (productId, subtotal) => {
+    setSubtotals((prevSubtotals) => {
+      const updatedSubtotals = {
+        ...prevSubtotals,
+        [productId]: subtotal,
+      };
+      const newTotal = Object.values(updatedSubtotals).reduce(
+        (sum, item) => sum + item,
+        0
+      );
+      setTotal(newTotal);
+      return updatedSubtotals;
+    });
+  };
+
+  useEffect(() => {
+    functionTotal(total);
+  }, [total, functionTotal]);
+   
   return (
     <div className="flex flex-col gap-12 ">
       <div className=" grid grid-cols-4 gap-16 border border-slate-100 shadow p-8 font-medium">
@@ -12,7 +35,13 @@ function TotalProducts() {
       </div>
 
       {data.map((product) => {
-        return <ProductItem key={product.id} product={product} />;
+        return (
+          <ProductItem
+            key={product.id}
+            product={product}
+            onTotalUpdate={handleTotalUpdate}
+          />
+        );
       })}
 
       <div className="flex justify-between">

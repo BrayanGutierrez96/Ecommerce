@@ -3,18 +3,18 @@ import { Link } from "react-router-dom";
 function Footer() {
   return (
     <div className="grid grid-cols-5 bg-black text-white px-32 py-14 mt-32">
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 pr-8">
         <h5 className="text-ll font-bold">Exclusive</h5>
         <Link className="text-sm">Subscribe</Link>
         <p className="text-sm">Get 10% off your first order</p>
-        <div className="border flex justify-between w-4/5 p-2 rounded">
+        <div className="border flex justify-between px-2  py-1 rounded">
           <input
             type="text"
             placeholder="Enter you email"
             className="bg-transparent text-white"
           />
           <button className="flex items-center">
-            <span className="material-symbols-outlined ">send</span>
+            <span className="material-symbols-outlined">send</span>
           </button>
         </div>
       </div>

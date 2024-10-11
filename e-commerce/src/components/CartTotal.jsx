@@ -1,8 +1,5 @@
-import { ProductContext } from "../context/ProductTotalPrice";
-import { useContext } from "react";
 
-function CartTotal() {
-  const { totalValue } = useContext(ProductContext);
+function CartTotal({totalValue}) {
 
   return (
     <div className="grid grid-cols-3 pt-12">
