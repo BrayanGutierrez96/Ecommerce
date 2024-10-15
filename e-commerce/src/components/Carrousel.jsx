@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import { data } from "../data";
+import { products } from "../data";
 import { useEffect, useState } from "react";
 function Carrousel() {
-  const info = data;
+  const info = products;
   const [active, setActive] = useState(0);
 
   const catchCard = (id) => {
@@ -12,7 +12,7 @@ function Carrousel() {
   useEffect(() => {
     const movimentCarrousel = setInterval(() => {
       setActive((valorActual) => {
-        if (valorActual < data.length - 1) {
+        if (valorActual < products.length - 1) {
           return valorActual + 1;
         } else {
           return 0;

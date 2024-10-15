@@ -1,10 +1,12 @@
 import ProductItem from "./ProductItem";
-import { data } from "../data";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { Link } from "react-router-dom";
+import { ProductContext } from "../context/ProductTotalPrice";
 
 function TotalProducts({ functionTotal }) {
+  const {data} = useContext(ProductContext)
   const [total, setTotal] = useState(0);
-  const [subtotals, setSubtotals] = useState({});
+  const [subtotals, setSubtotals] = useState({})
 
   const handleTotalUpdate = (productId, subtotal) => {
     setSubtotals((prevSubtotals) => {
@@ -24,7 +26,8 @@ function TotalProducts({ functionTotal }) {
   useEffect(() => {
     functionTotal(total);
   }, [total, functionTotal]);
-   
+
+
   return (
     <div className="flex flex-col gap-12 ">
       <div className=" grid grid-cols-4 gap-16 border border-slate-100 shadow p-8 font-medium">
@@ -34,10 +37,10 @@ function TotalProducts({ functionTotal }) {
         <h5>Subtotal</h5>
       </div>
 
-      {data.map((product) => {
+      {data.map((product, index) => {
         return (
           <ProductItem
-            key={product.id}
+            key={index}
             product={product}
             onTotalUpdate={handleTotalUpdate}
           />
@@ -45,9 +48,9 @@ function TotalProducts({ functionTotal }) {
       })}
 
       <div className="flex justify-between">
-        <button className="border py-4 w-60 hover:bg-black hover:text-white px-8 text-lg font-medium rounded border-gray-600">
+        <Link to="/" className="flex justify-center border py-4 w-60 hover:bg-black hover:text-white px-8 text-lg font-medium rounded border-gray-600">
           Return to Shop
-        </button>
+        </Link>
         <button className="border py-4 w-60 hover:bg-black hover:text-white px-8 text-lg font-medium rounded border-gray-600">
           Update Cart
         </button>

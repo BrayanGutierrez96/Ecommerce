@@ -5,7 +5,9 @@ function ProductItem({ product, onTotalUpdate }) {
   const [subtotal, setSubtotal] = useState(product.price); 
   const [active, setActive] = useState(false);
 
-  const close = () => {
+
+  console.log(product)
+    const close = () => {
     if (active === false) {
       setActive(true);
     } else {
@@ -21,11 +23,11 @@ function ProductItem({ product, onTotalUpdate }) {
   const decrease = () => {
     setQuantity((prev) => (prev > 0 ? prev - 1 : 0));
   };
-  useEffect(() => {
-    const newSubtotal = product.price * quantity;
-    setSubtotal(newSubtotal);
-    onTotalUpdate(product.id, newSubtotal);
-  }, [quantity, product.price]);
+  // useEffect(() => {
+  //   const newSubtotal = product.product.price * quantity;
+  //   setSubtotal(newSubtotal);
+  //   onTotalUpdate(product.id, newSubtotal);
+  // }, [quantity, product.product.price]);
 
   return (
     <div className="grid grid-cols-4 gap-16 border border-slate-100 shadow p-8 font-medium items-center">
@@ -38,13 +40,13 @@ function ProductItem({ product, onTotalUpdate }) {
               } material-symbols-outlined  bg-red-500 text-white rounded-full cursor-pointer z-50 text-base px-1 font-bold `}
             >
               close
-            </span>
-            <img src={product.img} alt={product.title} className="w-20 z-0" />
+            </span> 
+            <img src={product.product.img} alt={product.product.title} className="w-20 z-0" />
           </div>
-          <p>{product.title}</p>
+          <p>{product.product.title}</p>
         </button>
       </div>
-      <p>${product.price}</p>
+      <p>${product.product.price}</p>
       <div>
         <div className="flex gap-2 w-4/12 border-2 border-gray-700 rounded justify-evenly p-1 items-center">
           <span className="cantidad ml-2 w-2/5">{quantity}</span>
