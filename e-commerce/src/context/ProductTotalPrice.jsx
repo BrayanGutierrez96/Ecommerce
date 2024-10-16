@@ -7,8 +7,6 @@ export function ProductProvider({ children }) {
   const [subTotals, setSubtotals] = useState(0);
   const [data, setData] = useState([]);
 
- 
-
   const handleTotalUpdate = (productId, subtotal) => {
     setSubtotals((prevSubtotals) => {
       const updatedSubtotals = {

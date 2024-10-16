@@ -4,7 +4,8 @@ function About() {
   return (
     <>
       <OurStory />
-      <Service/>
+
+      <Service />
     </>
   );
 }
