@@ -1,4 +1,3 @@
-
 import CartTotal from "../components/CartTotal";
 import NavLinks from "../components/NavLinks";
 import TotalProducts from "../components/TotalProducts";
