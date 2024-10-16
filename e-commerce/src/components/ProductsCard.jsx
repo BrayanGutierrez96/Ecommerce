@@ -1,7 +1,9 @@
+import { useContext } from "react";
+import { ProductContext } from "../context/ProductTotalPrice";
 
+function ProductsCard({ img, title, price, oldPrice, rate, off, id }){
+  const {addProduct} = useContext(ProductContext)
 
-function ProductsCard({ img, title, price, oldPrice, rate, off}) {
-  
   return (
     <div className="flex flex-col shadow pb-8 gap-6 ">
       <div className="relative">
@@ -22,7 +24,13 @@ function ProductsCard({ img, title, price, oldPrice, rate, off}) {
           <img className="w-full p-12 h-60" src={img} alt="" />
         </div>
         <div className="absolute z-50 bottom-0 bg-black w-full text-white text-center cursor-pointer py-2">
-          <button>add to car</button>
+          <button
+            onClick={() => {
+              addProduct(img, title, price);
+            }}
+          >
+            add to car
+          </button>
         </div>
       </div>
 
@@ -32,15 +40,25 @@ function ProductsCard({ img, title, price, oldPrice, rate, off}) {
           <span className="text-red-500 font-semibold">${price}</span>
           <span className="text-gray-400 line-through ">${oldPrice}</span>
         </div>
-        
+
         <div className="flex gap-2 items-center">
-            <div className=" flex">
-            <span className="material-symbols-outlined text-yellow-500 bg-">star_rate_half</span>
-            <span className="material-symbols-outlined text-yellow-500">star_rate_half</span>
-            <span className="material-symbols-outlined text-yellow-500">star_rate_half</span>
-            <span className="material-symbols-outlined text-yellow-500">star_rate_half</span>
-            <span className="material-symbols-outlined text-yellow-500">star</span>
-            </div>
+          <div className=" flex">
+            <span className="material-symbols-outlined text-yellow-500 bg-">
+              star_rate_half
+            </span>
+            <span className="material-symbols-outlined text-yellow-500">
+              star_rate_half
+            </span>
+            <span className="material-symbols-outlined text-yellow-500">
+              star_rate_half
+            </span>
+            <span className="material-symbols-outlined text-yellow-500">
+              star_rate_half
+            </span>
+            <span className="material-symbols-outlined text-yellow-500">
+              star
+            </span>
+          </div>
           <span className="text-gray-400 text-sm font-semibold">({rate})</span>
         </div>
       </div>

@@ -2,9 +2,9 @@ import { useContext, useEffect, useState } from "react";
 import { ProductContext } from "../context/ProductTotalPrice";
 
 function ProductItem({ product }) {
-  const {handleTotalUpdate} = useContext(ProductContext)
+  const { handleTotalUpdate } = useContext(ProductContext);
   const [quantity, setQuantity] = useState(1);
-  const [subtotal, setSubtotal] = useState(product.price); 
+  const [subtotal, setSubtotal] = useState(0);
   const [active, setActive] = useState(false);
 
   const close = () => {
@@ -12,7 +12,7 @@ function ProductItem({ product }) {
       setActive(true);
     } else {
       setActive(false);
-    }
+}
   };
   const increase = () => {
     setQuantity((prevQuantity) => {
@@ -23,12 +23,12 @@ function ProductItem({ product }) {
   const decrease = () => {
     setQuantity((prev) => (prev > 0 ? prev - 1 : 0));
   };
-  
+
   useEffect(() => {
-    const newSubtotal = product.price * quantity;
+    const newSubtotal = product.product.price * quantity;
     setSubtotal(newSubtotal);
     handleTotalUpdate(product.id, newSubtotal);
-  }, [quantity, product.price]);
+  }, [quantity, product.product.price]);
 
   return (
     <div className="grid grid-cols-4 gap-16 border border-slate-100 shadow p-8 font-medium items-center">
@@ -42,12 +42,16 @@ function ProductItem({ product }) {
             >
               close
             </span>
-            <img src={product.img} alt={product.title} className="w-20 z-0" />
+            <img
+              src={product.product.img}
+              alt={product.product.title}
+              className="w-20 z-0"
+            />
           </div>
-          <p>{product.title}</p>
+          <p>{product.product.title}</p>
         </button>
       </div>
-      <p>${product.price}</p>
+      <p>${product.product.price}</p>
       <div>
         <div className="flex gap-2 w-4/12 border-2 border-gray-700 rounded justify-evenly p-1 items-center">
           <span className="cantidad ml-2 w-2/5">{quantity}</span>

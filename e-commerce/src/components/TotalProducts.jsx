@@ -1,9 +1,10 @@
 import ProductItem from "./ProductItem";
-import { data } from "../data";
+import { useContext } from "react";
+import { Link } from "react-router-dom";
+import { ProductContext } from "../context/ProductTotalPrice";
 
-
-function TotalProducts( ) {
-
+function TotalProducts() {
+  const { data } = useContext(ProductContext);
   return (
     <div className="flex flex-col gap-12 ">
       <div className=" grid grid-cols-4 gap-16 border border-slate-100 shadow p-8 font-medium">
@@ -13,19 +14,17 @@ function TotalProducts( ) {
         <h5>Subtotal</h5>
       </div>
 
-      {data.map((product) => {
-        return (
-          <ProductItem
-            key={product.id}
-            product={product}
-          />
-        );
+      {data.map((product, index) => {
+        return <ProductItem key={index} product={product} />;
       })}
 
       <div className="flex justify-between">
-        <button className="border py-4 w-60 hover:bg-black hover:text-white px-8 text-lg font-medium rounded border-gray-600">
+        <Link
+          to="/"
+          className="flex justify-center border py-4 w-60 hover:bg-black hover:text-white px-8 text-lg font-medium rounded border-gray-600"
+        >
           Return to Shop
-        </button>
+        </Link>
         <button className="border py-4 w-60 hover:bg-black hover:text-white px-8 text-lg font-medium rounded border-gray-600">
           Update Cart
         </button>

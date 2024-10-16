@@ -1,8 +1,7 @@
 import ProductsCard from "./ProductsCard";
-import { data } from "../data";
+import { products } from "../data";
 import Clock from "./Clock";
 function Catalog() {
-  const products = data;
   return (
     <section className="flex flex-col gap-8">
       <div className="flex mt-32  items-center gap-4">
@@ -34,6 +33,7 @@ function Catalog() {
               oldPrice={product.oldPrice}
               rate={product.rate}
               off={product.off}
+              id={product.id}
             />
           );
         })}

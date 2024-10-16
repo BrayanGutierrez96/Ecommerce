@@ -1,14 +1,23 @@
-
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 function Navbar() {
   const navigate = useNavigate();
+  const [contract, setContract] = useState(false);
 
 
   const navigation = () => {
     navigate("/");
   };
 
+
+  const toggleContract = ()=>{
+    if(contract === true){
+      setContract(false)
+    }else{
+      setContract(true)
+    }
+  }
 
   return (
     <nav className="grid border-b-2 pb-4 ">
@@ -29,7 +38,42 @@ function Navbar() {
         </div>
       </div>
 
-      <div className="grid grid-cols-5 mt-4 mx-32">
+    <div className={`flex sm:hidden w-full flex-end  justify-between px-4 pt-4`}>
+    <Link className="font-bold text-lg">Exclusive</Link>
+      <button className="material-symbols-outlined w-max" onClick={toggleContract}>menu</button>
+    </div>
+
+    <div className={`${contract ? "hidden" : "grid"}  gap-2 sm:hidden pt-4 `}>
+    <ul className="grid grid-cols-4" >
+      <li className="flex justify-center">
+        <Link className="hover:border-b-2 hover:border-slate-400 text-sm ">Home</Link>
+      </li>
+      <li className="flex justify-center">
+        <Link className="hover:border-b-2 hover:border-slate-400 text-sm">Contact</Link>
+      </li>
+      <li className="flex justify-center">
+        <Link className="hover:border-b-2 hover:border-slate-400 text-sm">About</Link>
+      </li>
+      <li className="flex justify-center">
+        <Link className="hover:border-b-2 hover:border-slate-400 text-sm">Sing Up</Link>
+      </li>
+   
+    </ul>
+    <ul className="grid grid-cols-3">
+    <li className="flex justify-center">
+        <Link className="material-symbols-outlined"> search</Link>
+      </li>
+      <li className=" flex justify-center">
+        <Link className="text-sm cursor-pointer">♡</Link>
+      </li>
+      <li className=" flex justify-center">
+        <Link className="material-symbols-outlined cursor-pointer">shopping_cart</Link>
+      </li>
+    </ul>
+    </div>
+    
+
+      <div className={`hidden sm:grid sm:grid-cols-5 mt-4 mx-32`}>
         <button
           className="flex w-32 items-center justify-center  p-1"
           onClick={navigation}
@@ -59,7 +103,10 @@ function Navbar() {
             </Link>
           </li>
           <li className="col-span-1 font-medium">
-            <Link className="hover:border-b-2 hover:border-slate-400" to="login">
+            <Link
+              className="hover:border-b-2 hover:border-slate-400"
+              to="login"
+            >
               Sing Up
             </Link>
           </li>
@@ -77,9 +124,6 @@ function Navbar() {
             />
             <button
               className="flex items-center active:bg-black active:text-white rounded"
-              onClick={() => {
-                console.log("clic");
-              }}
             >
               <span className="material-symbols-outlined">search</span>
             </button>
