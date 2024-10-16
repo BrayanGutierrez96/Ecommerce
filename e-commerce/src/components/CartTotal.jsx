@@ -1,5 +1,9 @@
+import { ProductContext } from "../context/ProductTotalPrice";
+import  {useContext} from 'react'
+function CartTotal() {
+  const { total } = useContext(ProductContext)
 
-function CartTotal({totalValue}) {
+
 
   return (
     <div className="grid grid-cols-3 pt-12">
@@ -24,7 +28,7 @@ function CartTotal({totalValue}) {
           </div>
           <div className="flex justify-between border-b border-black font-normal pb-4">
             <p>Subtotal:</p>
-            <p>${totalValue}</p>
+            <p>${total}</p>
           </div>
           <div className="flex justify-between border-b border-black font-normal pb-4 ">
             <p>Shipping:</p>
@@ -32,7 +36,7 @@ function CartTotal({totalValue}) {
           </div>
           <div className="flex justify-between font-normal">
             <p>Total:</p>
-            <p>${totalValue}</p> {/* Aquí mostramos el total dinámicamente */}
+            <p>${total}</p> 
           </div>
           <button className="m-auto text-white rounded py-4 px-10 bg-red-500 hover:bg-black hover:text-white">
             Proceed to checkout

@@ -1,6 +1,8 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { ProductContext } from "../context/ProductTotalPrice";
 
-function ProductItem({ product, onTotalUpdate }) {
+function ProductItem({ product }) {
+  const {handleTotalUpdate} = useContext(ProductContext)
   const [quantity, setQuantity] = useState(1);
   const [subtotal, setSubtotal] = useState(product.price); 
   const [active, setActive] = useState(false);
@@ -21,10 +23,11 @@ function ProductItem({ product, onTotalUpdate }) {
   const decrease = () => {
     setQuantity((prev) => (prev > 0 ? prev - 1 : 0));
   };
+  
   useEffect(() => {
     const newSubtotal = product.price * quantity;
     setSubtotal(newSubtotal);
-    onTotalUpdate(product.id, newSubtotal);
+    handleTotalUpdate(product.id, newSubtotal);
   }, [quantity, product.price]);
 
   return (

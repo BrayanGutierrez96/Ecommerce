@@ -3,19 +3,30 @@ import { createContext, useState } from "react";
 export const ProductContext = createContext();
 
 export function ProductProvider({ children }) {
-  const [totalProducts, setTotalProducts] = useState(0);
-  const [totalValue, setTotalValue] = useState(0);
-
-  const updateTotalProducts = (quantity) => {
-    setTotalProducts((prevTotal) => prevTotal + quantity);
-  };
-
-  const updateTotalValue = (amount) => {
-        setTotalValue((prevValue) => prevValue + amount);
+  const [total, setTotal] = useState(0)
+  const [subTotals, setSubtotals] = useState(0)
+  const catchTotal = (valorTotal)=>{
+    setTotal(valorTotal)
+  }
+  
+  const handleTotalUpdate = (productId, subtotal) => {
+    setSubtotals((prevSubtotals) => {
+      const updatedSubtotals = {
+        ...prevSubtotals,
+        [productId]: subtotal,
+      };
+    
+      const newTotal = Object.values(updatedSubtotals).reduce(
+        (sum, item) => sum + item,
+        0
+      );
+      setTotal(newTotal);
+      return updatedSubtotals;
+    });
   };
 
   return (
-    <ProductContext.Provider value={{ totalProducts, updateTotalProducts, totalValue, updateTotalValue,setTotalValue }}>
+    <ProductContext.Provider value={{ total, setTotal, catchTotal, handleTotalUpdate}}>
       {children}
     </ProductContext.Provider>
   );

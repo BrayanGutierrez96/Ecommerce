@@ -1,21 +1,15 @@
-import { useState } from "react";
+
 import { Link, useNavigate } from "react-router-dom";
 
 function Navbar() {
   const navigate = useNavigate();
-  const [contract, setContract] = useState(true);
+
 
   const navigation = () => {
     navigate("/");
   };
 
-  const menu = () => {
-    const list = document.querySelector("#list");
-    if (contract === true) {
-      <span className="material-symbols-outlined">menu</span>;
-      list.style.display = "none";
-    }
-  };
+
   return (
     <nav className="grid border-b-2 pb-4 ">
       <div className="bg-black grid grid-cols-1 px-2 pt-4 pb-1 sm:px-32 sm:py-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -47,7 +41,7 @@ function Navbar() {
           className="grid grid-cols-5  col-span-3 items-center pt-2"
         >
           <li className="col-span-1 font-medium">
-            <Link className="hover:border-b-2 hover:border-slate-400 ">
+            <Link className="hover:border-b-2 hover:border-slate-400 " to='/'>
               Home
             </Link>
           </li>
