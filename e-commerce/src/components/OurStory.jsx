@@ -31,7 +31,7 @@ function OurStory() {
           <div className="h-full">
             <img
               className="h-full"
-              src="../../public/logo-about.jpeg"
+              src="logo-about.jpeg"
               alt="logo about"
             />
           </div>
