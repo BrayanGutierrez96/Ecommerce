@@ -4,7 +4,7 @@ function Login() {
     <div>
       <section id="home">
       <div id="portada">
-        <img src="../../public/portada.jpg" alt="" />
+        <img src="portada.jpg" alt="" />
       </div>
       <div id="contenedor-formulario">
         <strong>
