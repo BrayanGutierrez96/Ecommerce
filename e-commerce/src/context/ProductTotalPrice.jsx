@@ -5,7 +5,7 @@ export const ProductContext = createContext();
 export function ProductProvider({ children }) {
   const [totalProducts, setTotalProducts] = useState(0);
   const [totalValue, setTotalValue] = useState(0);
-  const [data, setData] = useState(localStorage.getItem("product"));
+  const [data, setData] = useState([]);
   console.log(localStorage.getItem("product"))
 
   const updateTotalProducts = (quantity) => {
