@@ -29,7 +29,7 @@ function Login() {
             Create Account
           </button>
           <button type="button" className="btn-login google-cuenta">
-            <img id="img-google" src="../../public/google.png" alt="" />
+            <img id="img-google" src="google.png" alt="" />
             Sign Up with Google
           </button>
         </form>

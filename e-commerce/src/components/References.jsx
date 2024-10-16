@@ -6,7 +6,7 @@ function References() {
         <div className="flex flex-row h-9 gap-3 items-center">
           <img
             className="h-full"
-            src="../../public/icons-phone.png"
+            src="icons-phone.png"
             alt="icon phone"
           />
           <h3>
@@ -25,7 +25,7 @@ function References() {
         <div className="flex flex-row h-9 gap-3 items-center">
           <img
             className="h-full"
-            src="../../public/icons-mail.png"
+            src="icons-mail.png"
             alt="icon mail"
           />
           <h3>
