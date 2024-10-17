@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import { products } from "../data";
+import { products } from "../../data";
 import { useEffect, useState } from "react";
 
-function Carrousel({menu}) {
+function Carrousel() {
   const info = products;
   const [active, setActive] = useState(0);
 
@@ -27,17 +27,17 @@ function Carrousel({menu}) {
   }, []);
 
   return (
-    <article className={`relative z-0 sm:col-span-7 pt-8 sm:pl-12`}>
+    <article className={`relative z-0 lg:col-span-7 pt-8 lg:pl-12`}>
       {info.map((element, index) => {
         return (
           <div
-            className={`bg-black sm:w-full sm:h-full pb-8" ${
+            className={`bg-black lg:w-full lg:h-full pb-8" ${
               index === active ? "grid" : "hidden"
             } `}
             key={index}
           >
-            <div className="grid sm:grid-cols-2 px-16">
-              <div className="pt-4 flex justify-center items-center sm:items-start flex-col gap-8  sm:pt-24 ">
+            <div className="grid lg:grid-cols-2 px-16">
+              <div className="pt-4 flex justify-center items-center lg:items-start flex-col gap-8  lg:pt-24 ">
                 <div className="flex items-center gap-8">
                   <div>
                     <div className="w-16 rounded">
@@ -49,27 +49,27 @@ function Carrousel({menu}) {
                     </div>
                   </div>
                   <h5
-                    className="text-sm sm:text-2xl text-white font-medium pt-2"
+                    className="text-sm lg:text-2xl text-white font-medium pt-2"
                     style={{ fontFamily: "poppins" }}
                   >
                     {element.title}
                   </h5>
                 </div>
 
-                <h5 className="flex  text-xl tracking-wider gap-2 text-white sm:text-5xl font-semibold pr-8 leading-tight">
+                <h5 className="flex  text-xl tracking-wider gap-2 text-white lg:text-5xl font-semibold pr-8 leading-tight">
                   Up to {element.off}%  off Voucher
                 </h5>
-                <Link className="text-sm text-white flex items-center gap-4 sm:text-xl">
+                <Link className="text-sm text-white flex items-center gap-4 lg:text-xl">
                   <p className="hover:border-white border-black border-b leading-normal">
                     Shop Now
                   </p>
-                  <span className="text-sm sm:text-lg material-symbols-outlined text-white pt-1 ">
+                  <span className="text-sm lg:text-lg material-symbols-outlined text-white pt-1 ">
                     arrow_forward
                   </span>{" "}
                 </Link>
               </div>
-              <div className="mt-8 flex justify-center items-center sm:mt-4 sm:w-full sm:h-96">
-                <img className="h-32 w-40 sm:h-full sm:w-full  max-w-fit " src={element.img} alt="" />
+              <div className="mt-8 flex justify-center items-center lg:mt-4 lg:w-full lg:h-96">
+                <img className="h-32 w-40 lg:h-full lg:w-full  max-w-fit " src={element.img} alt="" />
               </div>
             </div>
             <div className="carrousel-btns flex justify-center gap-4 m-8">

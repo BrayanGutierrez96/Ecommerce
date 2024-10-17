@@ -1,12 +1,13 @@
-import Catalog from "../components/Catalog";
-import Categories from "../components/Categories";
+import Catalog from "../components/mainPage/Catalog";
+import Categories from "../components/mainPage/Categories";
+import CategoriesProducts from "../components/mainPage/CategoriesProducts";
 
 function MainPage() {
   return (
-    <main className="mx-1 sm:mx-32">
+    <main className="mx-2 sm:mx-4 md:mx-12 lg:mx-32">
       <Categories />
       <Catalog />
-     
+      <CategoriesProducts/>
     </main>
   );
 }

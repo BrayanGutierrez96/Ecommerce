@@ -12,50 +12,50 @@ function Navbar() {
 
 
   const toggleContract = ()=>{
-    if(contract === true){
-      setContract(false)
-    }else{
+    if(!contract){
       setContract(true)
+    }else{
+      setContract(false)
     }
   }
 
   return (
     <nav className="grid border-b-2 pb-4 ">
-      <div className="bg-black grid grid-cols-1 px-2 pt-4 pb-1 sm:px-32 sm:py-4 sm:grid-cols-2 lg:grid-cols-3">
-        <div className="grid col-span-1 items-center justify-center sm:flex lg:justify-end sm:col-span-1 lg:col-span-2">
-          <div className="grid text-white text-xs col-span-1 sm:col-span-2 lg:justify-end lg:text-base">
+      <div className="bg-black grid grid-cols-1 px-2 pt-4 pb-1 lg:px-32 lg:py-4 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid col-span-1 items-center justify-center lg:flex lg:justify-end md:col-span-1 lg:col-span-2">
+          <div className="grid text-white text-xs col-span-1 lg:col-span-2 lg:justify-end lg:text-base">
             Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
           </div>
-          <div className="flex justify-center text-xs lg:text-sm text-white pl-3 sm:justify-end  ">
+          <div className="flex justify-center text-xs lg:text-sm text-white pl-3 lg:justify-end  ">
             <Link className="font-bold border-b w-auto">ShopNow</Link>
           </div>
         </div>
         <div className="flex text-white text-xs items-center justify-end lg:text-base">
           English
-          <span className="sm:pt-1 material-symbols-outlined">
+          <span className="lg:pt-1 material-symbols-outlined cursor-pointer">
             keyboard_arrow_down
           </span>
         </div>
       </div>
 
-    <div className={`flex sm:hidden w-full flex-end  justify-between px-4 pt-4`}>
-    <Link className="font-bold text-lg">Exclusive</Link>
+    <div className={`flex lg:hidden w-full flex-end  justify-between px-4 pt-4`}>
+    <Link to='/' className="font-bold text-lg">Exclusive</Link>
       <button className="material-symbols-outlined w-max" onClick={toggleContract}>menu</button>
     </div>
 
-    <div className={`${contract ? "hidden" : "grid"}  gap-2 sm:hidden pt-4 `}>
+    <div className={`${contract ? "hidden" : "grid"}  gap-2 lg:hidden pt-4 `}>
     <ul className="grid grid-cols-4" >
       <li className="flex justify-center">
-        <Link className="hover:border-b-2 hover:border-slate-400 text-sm ">Home</Link>
+        <Link to='/' className="border-b-2 border-transparent hover:border-b-2 hover:border-slate-400 text-sm ">Home</Link>
       </li>
       <li className="flex justify-center">
-        <Link className="hover:border-b-2 hover:border-slate-400 text-sm">Contact</Link>
+        <Link to="/contact" className="border-b-2 border-transparent hover:border-b-2 hover:border-slate-400 text-sm">Contact</Link>
       </li>
       <li className="flex justify-center">
-        <Link className="hover:border-b-2 hover:border-slate-400 text-sm">About</Link>
+        <Link to="/about" className="border-b-2 border-transparent hover:border-b-2 hover:border-slate-400 text-sm">About</Link>
       </li>
       <li className="flex justify-center">
-        <Link className="hover:border-b-2 hover:border-slate-400 text-sm">Sing Up</Link>
+        <Link to="/login" className="border-b-2 border-transparent hover:border-b-2 hover:border-slate-400 text-sm">Sing Up</Link>
       </li>
    
     </ul>
@@ -67,13 +67,13 @@ function Navbar() {
         <Link className="text-sm cursor-pointer">♡</Link>
       </li>
       <li className=" flex justify-center">
-        <Link className="material-symbols-outlined cursor-pointer">shopping_cart</Link>
+        <Link to='/carrito' className="material-symbols-outlined cursor-pointer">shopping_cart</Link>
       </li>
     </ul>
     </div>
     
 
-      <div className={`hidden sm:grid sm:grid-cols-5 mt-4 mx-32`}>
+      <div className={`hidden lg:grid lg:grid-cols-5 mt-4 mx-32`}>
         <button
           className="flex w-32 items-center justify-center  p-1"
           onClick={navigation}

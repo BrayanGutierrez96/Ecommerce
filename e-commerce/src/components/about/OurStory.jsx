@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logo from "../../assets/logo-about.jpeg"
 function OurStory() {
   return (
     <>
@@ -31,7 +32,7 @@ function OurStory() {
           <div className="h-full">
             <img
               className="h-full"
-              src="logo-about.jpeg"
+              src={logo}
               alt="logo about"
             />
           </div>

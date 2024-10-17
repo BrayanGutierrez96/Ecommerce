@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { ProductContext } from "../context/ProductTotalPrice";
+import { ProductContext } from "../../context/ProductTotalPrice";
 import PropTypes from "prop-types";
 
 function ProductsCard({ img, title, price, oldPrice, rate, off, id }) {
@@ -22,7 +22,7 @@ function ProductsCard({ img, title, price, oldPrice, rate, off, id }) {
     }
   };
   return (
-    <div className="flex flex-col shadow pb-8 gap-6 ">
+    <div className="flex flex-col shadow pb-8 gap-6 sm:1/2 ">
       <div className="relative">
         <div className="">
           <div className="absolute top-2 left-2 z-50 bg-red-500 text-white py-1 px-6 rounded">
@@ -45,9 +45,10 @@ function ProductsCard({ img, title, price, oldPrice, rate, off, id }) {
         <div
           className={`${
             active ? "absolute" : "hidden"
-          } z-50 bottom-0 bg-black w-full text-white text-center cursor-pointer py-2`}
+          } z-50 bottom-0 bg-black w-full text-white text-center cursor-pointer py-2 hover:bg-red-500 active:bg-gray-500`}
         >
           <button
+          className=""
             onClick={() => {
               addProduct(img, title, price, id);
             }}

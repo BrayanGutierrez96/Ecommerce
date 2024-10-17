@@ -1,6 +1,6 @@
-import CartTotal from "../components/CartTotal";
-import NavLinks from "../components/NavLinks";
-import TotalProducts from "../components/TotalProducts";
+import CartTotal from "../components/shoppingCart/CartTotal";
+import NavLinks from "../components/nav/NavLinks";
+import TotalProducts from "../components/shoppingCart/TotalProducts";
 
 function Carrito() {
   return (

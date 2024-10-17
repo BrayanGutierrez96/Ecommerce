@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { ProductContext } from "../context/ProductTotalPrice";
+import { ProductContext } from "../../context/ProductTotalPrice";
 import PropTypes from "prop-types";
 
 function ProductItem({ product }) {

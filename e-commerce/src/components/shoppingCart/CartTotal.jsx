@@ -1,4 +1,4 @@
-import { ProductContext } from "../context/ProductTotalPrice";
+import { ProductContext } from "../../context/ProductTotalPrice";
 import  {useContext} from 'react'
 function CartTotal() {
   const { total } = useContext(ProductContext)

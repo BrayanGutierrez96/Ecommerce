@@ -43,33 +43,33 @@ function Clock() {
   const { dias, horas, minutos, segundos } = formatTime(timeRemaining);
 
   return (
-    <div className="w-3/5">
+    <div className=" flex justify-center lg:justify-start xl:w-3/5">
       <ul className="flex gap-8">
         <li className="flex items-center gap-8">
           <div>
             <p className="font-medium text-sm">Days</p>
-            <p className="font-bold text-3xl">{dias}</p>
+            <p className="font-bold text-xl lg:text-3xl">{dias}</p>
           </div>
           <span className="text-2xl text-red-500 font-bold">:</span>
         </li>
         <li className="flex items-center gap-8">
           <div>
             <p className="font-medium text-sm">Hours</p>
-            <p className="font-bold text-3xl">{horas}</p>
+            <p className="font-bold text-xl lg:text-3xl">{horas}</p>
           </div>
           <span className="text-2xl text-red-500 font-bold">:</span>
         </li>
         <li className="flex items-center gap-8">
           <div>
             <p className="font-medium text-sm">Minutes</p>
-            <p className="font-bold text-3xl">{minutos}</p>
+            <p className="font-bold text-xl lg:text-3xl">{minutos}</p>
           </div>
           <span className="text-2xl text-red-500 font-bold">:</span>
         </li>
         <li className="flex items-center gap-8">
           <div>
             <p className="font-medium text-sm">Seconds</p>
-            <p className="font-bold text-3xl">{segundos}</p>
+            <p className="font-bold text-xl lg:text-3xl">{segundos}</p>
           </div>
         </li>
       </ul>

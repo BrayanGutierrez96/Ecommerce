@@ -1,7 +1,7 @@
 import ProductItem from "./ProductItem";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { ProductContext } from "../context/ProductTotalPrice";
+import { ProductContext } from "../../context/ProductTotalPrice";
 
 function TotalProducts() {
   const { data } = useContext(ProductContext);
