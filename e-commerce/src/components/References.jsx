@@ -1,4 +1,4 @@
-import React from "react";
+
 function References() {
   return (
     <div className="w-[22%] mx-2 shadow-[1px_-1px_10px_1px_rgba(0,0,0,0.1)] flex flex-col justify-center rounded">
