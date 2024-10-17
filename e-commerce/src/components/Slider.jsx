@@ -1,6 +1,6 @@
-import { useState } from "react";
+import PropTypes from "prop-types";
 
-function StatsCard({ icon, value, label, highlighted }) {
+function StatsCard({ icon, value, label, }) {
   
   return (
       <button
@@ -15,12 +15,19 @@ function StatsCard({ icon, value, label, highlighted }) {
     );
 }
 
+StatsCard.propTypes = {
+  icon : PropTypes.string.isRequired,
+  value : PropTypes.string.isRequired,
+  label : PropTypes.string.isRequired,
+}
+
+
 function StatsGrid() {
     const stats = [
-      { icon: 'store', value: '10.5k', label: 'Sellers active on our site', highlighted: false },
-      { icon: 'monetization_on', value: '33k', label: 'Monthly Product Sale', highlighted: true },
-      { icon: 'shopping_bag', value: '45.5k', label: 'Customers active in our site', highlighted: false },
-      { icon: 'attach_money', value: '25k', label: 'Annual gross sale in our site', highlighted: false },
+      { icon: 'store', value: '10.5k', label: 'Sellers active on our site'},
+      { icon: 'monetization_on', value: '33k', label: 'Monthly Product Sale' },
+      { icon: 'shopping_bag', value: '45.5k', label: 'Customers active in our site' },
+      { icon: 'attach_money', value: '25k', label: 'Annual gross sale in our site' },
     ];
 
     return (
@@ -49,4 +56,6 @@ function StatsPage() {
   );
 }
 
+
 export default StatsPage;
+
