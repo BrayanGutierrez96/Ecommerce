@@ -2,16 +2,16 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <div className="grid grid-cols-5 bg-black text-white px-32 py-14 mt-32">
-      <div className="flex flex-col gap-4 pr-8">
+    <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-5 bg-black text-white px-8 px-32 py-14 mt-32">
+      <div className="flex flex-col gap-2 pr-16 lg:gap-4 2xl:pr-8">
         <h5 className="text-ll font-bold">Exclusive</h5>
         <Link className="text-sm">Subscribe</Link>
         <p className="text-sm">Get 10% off your first order</p>
-        <div className="border flex justify-between px-2  py-1 rounded">
+        <div className="border flex gap-1 justify-between px-2 py-1 rounded">
           <input
             type="text"
             placeholder="Enter you email"
-            className="bg-transparent text-white"
+            className="bg-transparent text-xs text-white w-4/5"
           />
           <button className="flex items-center">
             <span className="material-symbols-outlined">send</span>
@@ -41,10 +41,10 @@ function Footer() {
         <Link className="text-sm hover:underline">FAQ</Link>
         <Link className="text-sm hover:underline">Contact</Link>
       </div>
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 col-span-2 sm:col-span-1 items-center">
         <h6 className="font-medium text-lg">Download App</h6>
         <p className="text-xs text-slate-400">Save $3 with App New User Only</p>
-        <div className="flex gap-2 w-4/5">
+        <div className="flex gap-2 w-3/5 md:w-4/5">
           <img className="w-2/5" src="QR.png" alt="" />
           <div className="flex flex-col gap-4 justify-between">
             <img

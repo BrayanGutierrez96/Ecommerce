@@ -55,3 +55,12 @@ export const products = [
     cant: 1,
   },
 ];
+
+export const categories = [
+  { img: "phone_iphone", title: "Phones" },
+  { img: "desktop_windows", title: "Computers" },
+  { img: "watch_wake", title: "Smartwatch" },
+  { img: "photo_camera", title: "Camera" },
+  { img: "headphones", title: "Headphones" },
+  { img: "videogame_asset", title: "Gaming" },
+];

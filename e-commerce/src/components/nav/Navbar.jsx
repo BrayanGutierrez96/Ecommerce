@@ -21,7 +21,7 @@ function Navbar() {
 
   return (
     <nav className="grid border-b-2 pb-4 ">
-      <div className="bg-black grid grid-cols-1 px-2 pt-4 pb-1 lg:px-32 lg:py-4 md:grid-cols-2 lg:grid-cols-3">
+      <div className="bg-black grid grid-cols-1 px-2 pt-4 pb-1 lg:px-32 lg:py-4 md:grid-cols-2 lg:grid-cols-3 fixed z-50 w-full">
         <div className="grid col-span-1 items-center justify-center lg:flex lg:justify-end md:col-span-1 lg:col-span-2">
           <div className="grid text-white text-xs col-span-1 lg:col-span-2 lg:justify-end lg:text-base">
             Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
@@ -38,7 +38,7 @@ function Navbar() {
         </div>
       </div>
 
-    <div className={`flex lg:hidden w-full flex-end  justify-between px-4 pt-4`}>
+    <div className={`flex lg:hidden w-full flex-end  justify-between px-4 pt-4 mt-20 `}>
     <Link to='/' className="font-bold text-lg">Exclusive</Link>
       <button className="material-symbols-outlined w-max" onClick={toggleContract}>menu</button>
     </div>
@@ -73,7 +73,7 @@ function Navbar() {
     </div>
     
 
-      <div className={`hidden lg:grid lg:grid-cols-5 mt-4 mx-32`}>
+      <div className={`hidden lg:grid lg:grid-cols-5 mt-20 mx-32`}>
         <button
           className="flex w-32 items-center justify-center  p-1"
           onClick={navigation}

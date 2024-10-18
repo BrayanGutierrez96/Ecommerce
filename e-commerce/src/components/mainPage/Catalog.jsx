@@ -1,4 +1,4 @@
-import ProductsCard from "../shoppingCart/ProductsCard";
+import ProductsCard from "./ProductsCard";
 import { products } from "../../data";
 import HeadSection from "./HeadSection";
 import Clock from "./Clock";

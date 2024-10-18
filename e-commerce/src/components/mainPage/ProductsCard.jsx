@@ -25,10 +25,10 @@ function ProductsCard({ img, title, price, oldPrice, rate, off, id }) {
     <div className="flex flex-col shadow pb-8 gap-6 sm:1/2 ">
       <div className="relative">
         <div className="">
-          <div className="absolute top-2 left-2 z-50 bg-red-500 text-white py-1 px-6 rounded">
+          <div className="absolute top-2 left-2 z-20 bg-red-500 text-white py-1 px-6 rounded">
             <span className="">-{off}%</span>
           </div>
-          <div className="absolute top-2 right-2 z-50 flex flex-col gap-1 select-none">
+          <div className="absolute top-2 right-2 z-20 flex flex-col gap-1 select-none">
             <span onClick={addToFavorite}
               className={` bg-white p-2 rounded-full border  cursor-pointer material-symbols-outlined`}
             >
