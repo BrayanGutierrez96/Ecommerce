@@ -1,7 +1,7 @@
-
 import References from "../components/contact/References";
 import { Link } from "react-router-dom";
 import FormContact from "../components/contact/FormContact";
+// actualizado
 function Contact() {
   return (
     <>
@@ -12,7 +12,7 @@ function Contact() {
         <span>/</span>
         <Link className="hover:underline">Contact</Link>
       </div>
-      <div className="flex flex-col md:flex-row lg:flex-row 2xl:flex-row gap-5 justify-center items-center">
+      <div className="flex flex-col md:h-[410px] md:flex-row lg:flex-row 2xl:flex-row gap-5 justify-center items-center">
         <References />
         <FormContact />
       </div>
