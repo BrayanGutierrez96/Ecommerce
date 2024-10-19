@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo-about.jpeg";
+// actualizado
 function OurStory() {
   return (
     <>
