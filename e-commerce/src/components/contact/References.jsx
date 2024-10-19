@@ -1,18 +1,14 @@
-
+// actualizado
 function References() {
   return (
-    <div className="w-[85%] sm:w-[91%] sm:mx-1 md:w-[22%] md:mx-1 2xl:w-[22%] 2xl:mx-2 shadow-[1px_-1px_10px_1px_rgba(0,0,0,0.1)] flex flex-col justify-center rounded ">
+    <div className="h-full w-[85%] sm:w-[91%] sm:mx-1 md:w-[22%] md:mx-1 2xl:w-[22%] 2xl:mx-2 shadow-[1px_-1px_10px_1px_rgba(0,0,0,0.1)] flex flex-col justify-center rounded ">
       <div className="flex flex-col gap-3 m-7 ">
         <div className="flex flex-row h-9 gap-3 items-center">
-          <img
-            className="h-full"
-            src="icons-phone.png"
-            alt="icon phone"
-          />
+          <img className="h-full" src="icons-phone.png" alt="icon phone" />
           <h3>
             <strong className="md:text-xs lg:text-base xl:text-xl 2xl:text-xl ">
               Call To Us
-            </strong>{" "}
+            </strong>
           </h3>
         </div>
         <div className="flex flex-col gap-4">
@@ -29,11 +25,7 @@ function References() {
       </div>
       <div className="flex flex-col gap-3 m-7">
         <div className="flex flex-row h-9 gap-3 items-center">
-          <img
-            className="h-full"
-            src="icons-mail.png"
-            alt="icon mail"
-          />
+          <img className="h-full" src="icons-mail.png" alt="icon mail" />
           <h3>
             <strong className="md:text-xs lg:text-base xl:text-xl 2xl:text-xl">
               Write To US
