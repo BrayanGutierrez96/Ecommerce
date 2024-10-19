@@ -1,4 +1,4 @@
-import React from "react";
+
 function References() {
   return (
     <div className="w-[85%] sm:w-[91%] sm:mx-1 md:w-[22%] md:mx-1 2xl:w-[22%] 2xl:mx-2 shadow-[1px_-1px_10px_1px_rgba(0,0,0,0.1)] flex flex-col justify-center rounded ">
@@ -6,7 +6,7 @@ function References() {
         <div className="flex flex-row h-9 gap-3 items-center">
           <img
             className="h-full"
-            src="../../public/icons-phone.png"
+            src="icons-phone.png"
             alt="icon phone"
           />
           <h3>
@@ -31,7 +31,7 @@ function References() {
         <div className="flex flex-row h-9 gap-3 items-center">
           <img
             className="h-full"
-            src="../../public/icons-mail.png"
+            src="icons-mail.png"
             alt="icon mail"
           />
           <h3>

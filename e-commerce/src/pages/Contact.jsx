@@ -1,7 +1,7 @@
-import React from "react";
-import References from "../components/References";
+
+import References from "../components/contact/References";
 import { Link } from "react-router-dom";
-import FormContact from "../components/FormContact";
+import FormContact from "../components/contact/FormContact";
 function Contact() {
   return (
     <>
