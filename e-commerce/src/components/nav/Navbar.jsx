@@ -108,7 +108,7 @@ function Navbar() {
           <li className="col-span-1 font-medium">
             <Link
               className="hover:border-b-2 hover:border-slate-400"
-              to="login"
+              to="create-account"
             >
               Sing Up
             </Link>
