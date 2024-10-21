@@ -7,6 +7,7 @@ import Login from "./pages/Login";
 import About from "./pages/About";
 import Contact from "./pages/Contact"
 import { ProductProvider } from "./context/ProductTotalPrice";
+import CreateAccount from "./components/singup/CreateAccount";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/" element={<MainPage />} />
         <Route path="/carrito" element={<Carrito />} />
         <Route path="/about" element={<About />} />
+        <Route path="/create-account" element={<CreateAccount />} />
         <Route path="/login" element={<Login />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
