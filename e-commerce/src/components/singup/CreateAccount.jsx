@@ -1,32 +1,59 @@
 import { useState } from "react";
 import "../../Styles/login.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+
 
 function CreateAccount() {
-  const [telefono, setTelefono] =  useState(0)
+  const navigate = useNavigate();
   const [info, setInfo] = useState({
     name: "",
-    identificador:"",
+    email: "",
     password: "",
   });
-
   const crearCuenta = (event) => {
-    const newInfo = {...info, [event.target.name]:event.target.value}
-    setInfo(newInfo)
+    const newInfo = { ...info, [event.target.name]: event.target.value };
+    setInfo(newInfo);
   };
 
-  const enviarDatos = ()=>{
-    const email = info.identificador
-    const ultimaPosicion = email.charAt(email.length - 1);
-    
-    const validacion = isNaN(ultimaPosicion)
-    if(validacion){
-      setTelefono(email);
-    }else{ 
-      setTelefono(parseInt(email));
+  const enviarDatos = () => {
+    if (!info.email || !info.name || !info.password) {
+      alert("debes de completar todos los campos para continuar");
+      return;
     }
-    console.log(telefono);
-  }
+    axios
+      .post("http://localhost:4000/crear-cliente", info)
+      .then((res) => {
+        navigate("/login");
+      })
+      .catch((err) => {
+        console.log(err)
+        if (err.response && err.response.data) {
+          if (err.response.data.type) {
+            if (
+              err.response.data.type === "minlength" ||
+              err.response.data.type === "maxlength"
+            ) {
+              alert(
+                "La contraseña debe ser mayor a 8 caracteres y menor a 16."
+              );
+              return;
+            }
+          }
+
+          if (err.response.data.code === 11000) {
+            alert(`El usuario ${info.email} ya existe en la base de datos`);
+            return;
+          }
+        }
+
+        if (err.response.data === 11000) {
+          alert(`El usuario ${info.email} ya existe en la base de datos`);
+          console.log(err);
+          return;
+        }
+      });
+  };
 
   return (
     <section id="home">
@@ -37,22 +64,38 @@ function CreateAccount() {
         <form action="" className="formulario">
           <h2 className="titulo-formulario">Create an account</h2>
           <h3 className="texto-formulario">Enter your details below</h3>
-          <input className="entrada-login" type="text" placeholder="Name" name="name" onChange={(e)=>{crearCuenta(e)}}/>
           <input
             className="entrada-login"
             type="text"
-            placeholder="Email or Phone Number"
-            name="identificador"
-            onChange={(e)=>{crearCuenta(e)}}
+            placeholder="Name"
+            name="name"
+            onChange={(e) => {
+              crearCuenta(e);
+            }}
+          />
+          <input
+            className="entrada-login"
+            type="text"
+            placeholder="Email"
+            name="email"
+            onChange={(e) => {
+              crearCuenta(e);
+            }}
           />
           <input
             className="entrada-login"
             type="password"
             placeholder="Password"
             name="password"
-            onChange={(e)=>{crearCuenta(e)}}
+            onChange={(e) => {
+              crearCuenta(e);
+            }}
           />
-          <button type="button" className="btn-create-account crear-cuenta" onClick={enviarDatos}>
+          <button
+            type="button"
+            className="btn-create-account crear-cuenta"
+            onClick={enviarDatos}
+          >
             Create Account
           </button>
           <button type="button" className="btn-create-account google-cuenta">

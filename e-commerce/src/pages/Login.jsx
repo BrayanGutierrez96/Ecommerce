@@ -1,6 +1,12 @@
 import "../Styles/login.css";
 import { Link } from "react-router-dom";
+// import { ValidatorProvider } from "../context/ValidationRoute";
+// import { useContext } from "react";
 function Login() {
+  // const { toggleEmailValidator, emailValidation} = useContext(ValidatorProvider)
+
+
+
   return (
     <div className="login">
       <section id="home">
