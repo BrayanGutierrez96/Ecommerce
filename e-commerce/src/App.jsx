@@ -10,6 +10,7 @@ import { ProductProvider } from "./context/ProductTotalPrice";
 import CreateAccount from "./components/singup/CreateAccount";
 import { ValidationRoute } from "./context/ValidationRoute";
 import Account from "./pages/Account";
+import CheckOut from "./pages/CheckOut";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/account" element={<Account/>}/>
+            <Route path="/checkout" element={<CheckOut/>}/>
           </Routes>
         </ValidationRoute>
       </ProductProvider>
