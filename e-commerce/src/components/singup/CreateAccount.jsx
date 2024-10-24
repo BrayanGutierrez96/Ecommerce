@@ -39,16 +39,9 @@ function CreateAccount() {
               return;
             }
           }
-
-          if (err.response.data.code === 11000) {
-            alert(`El usuario ${info.email} ya existe en la base de datos`);
-            return;
-          }
         }
-
         if (err.response.data === 11000) {
           alert(`El usuario ${info.email} ya existe en la base de datos`);
-          console.log(err);
           return;
         }
       });
