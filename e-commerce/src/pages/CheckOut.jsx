@@ -1,9 +1,7 @@
-import NavLinks from "../components/nav/NavLinks";
 
-export default function CheckOut() {
+ function CheckOut() {
   return (
     <>
-      <NavLinks></NavLinks>
       <form>
 
         <div>
@@ -83,3 +81,4 @@ export default function CheckOut() {
       )
 }
 
+export default CheckOut
