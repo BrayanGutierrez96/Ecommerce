@@ -20,7 +20,7 @@ function Login() {
             <input
               className="entrada-login"
               type="text"
-              placeholder="Email or Phone Number"
+              placeholder="Email"
             />
             <input
               className="entrada-login"

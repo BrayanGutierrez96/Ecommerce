@@ -27,7 +27,6 @@ function CreateAccount() {
         navigate("/login");
       })
       .catch((err) => {
-        console.log(err)
         if (err.response && err.response.data) {
           if (err.response.data.type) {
             if (

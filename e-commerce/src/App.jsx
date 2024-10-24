@@ -8,7 +8,8 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import { ProductProvider } from "./context/ProductTotalPrice";
 import CreateAccount from "./components/singup/CreateAccount";
-import { ValidationRoute, ValidatorProvider } from "./context/ValidationRoute";
+import { ValidationRoute } from "./context/ValidationRoute";
+import Account from "./pages/Account";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route path="/create-account" element={<CreateAccount />} />
             <Route path="/login" element={<Login />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/account" element={<Account/>}/>
           </Routes>
         </ValidationRoute>
       </ProductProvider>
