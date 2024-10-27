@@ -1,20 +1,16 @@
-import { useState } from "react";
 import "../../Styles/login.css";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import useForm from "../../customsHooks/useForm";
 
 
 function CreateAccount() {
   const navigate = useNavigate();
-  const [info, setInfo] = useState({
+  const {crearCuenta, info} = useForm({
     name: "",
     email: "",
     password: "",
-  });
-  const crearCuenta = (event) => {
-    const newInfo = { ...info, [event.target.name]: event.target.value };
-    setInfo(newInfo);
-  };
+  })
 
   const enviarDatos = () => {
     if (!info.email || !info.name || !info.password) {
@@ -23,7 +19,7 @@ function CreateAccount() {
     }
     axios
       .post("http://localhost:4000/crear-cliente", info)
-      .then((res) => {
+      .then(() => {
         navigate("/login");
       })
       .catch((err) => {

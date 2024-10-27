@@ -105,12 +105,17 @@ function Navbar() {
               About
             </Link>
           </li>
-          <li className="col-span-1 font-medium">
+          <li className=" flex gap-2 col-span-1 font-medium">
             <Link
-              className="hover:border-b-2 hover:border-slate-400"
+              className="border-b-2 border-transparent hover:border-b-2 hover:border-slate-400"
               to="create-account"
             >
               Sing Up
+            </Link>
+            <div>/</div>
+            <Link className="border-b-2 border-transparent  hover:border-b-2 hover:border-slate-400"
+              to="login">
+            Sing In
             </Link>
           </li>
         </ul>

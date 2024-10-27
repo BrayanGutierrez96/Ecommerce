@@ -50,13 +50,10 @@ function FormAccount({ displayForm }) {
           />
           <input
             type="password"
-            id="passwordChanges"
-            name="passwordChanges"
             placeholder="New Passwod"
           />
           <input
             type="password"
-            id="passwordChanges"
             name="passwordChanges"
             placeholder="Confirm New Passwod"
           />

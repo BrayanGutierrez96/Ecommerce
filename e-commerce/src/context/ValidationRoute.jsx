@@ -6,11 +6,9 @@ export const ValidatorProvider = createContext()
 export function ValidationRoute({children}){
     const [emailValidation, setEmailValidation] = useState(false)
 
-    const toggleEmailValidator =()=>{
-        setEmailValidation(true)
-    }
 
-    return(<ValidatorProvider.Provider value ={{emailValidation, toggleEmailValidator}}>
+
+    return(<ValidatorProvider.Provider value ={{emailValidation, setEmailValidation}}>
         {children}
     </ValidatorProvider.Provider>)
 
