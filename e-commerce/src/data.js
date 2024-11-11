@@ -13,7 +13,7 @@ export const products = [
   {
     id: 2,
     logo: "logo-jbl.jpg",
-    title: "Baffle JBL",
+    title: "Baffle BOSE",
     img: "parlante-jbl.png",
     off: 5,
     price: 650,
